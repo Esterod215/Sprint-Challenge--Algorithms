@@ -98,6 +98,7 @@ class SortingRobot:
         """
         # Fill this out
         self.set_light_on() #turn on robots light
+        self.swap_item() #added this because robot needs initial item
         
         while self.light_is_on(): #Loops until light is off
              
@@ -110,7 +111,7 @@ class SortingRobot:
                 break #breaks loop
                  
             else:
-                 while self.move_left(): #go towards end of list backwards
+                 while self.move_left(): #checks that the left items arent greater
                     if self.compare_item() is None:
                         self.swap_item()
                         self.move_right()
