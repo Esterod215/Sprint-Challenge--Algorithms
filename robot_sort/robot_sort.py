@@ -108,7 +108,7 @@ class SortingRobot:
            
             if self.compare_item() == None: 
                 self.swap_item()
-                self.set_light_off()
+                self.set_light_off() # added this to brealk infinite loop
                 break #breaks loop
                  
             else:
