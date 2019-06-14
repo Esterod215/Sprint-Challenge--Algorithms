@@ -99,7 +99,13 @@ class SortingRobot:
         # Fill this out
 
         self.set_light_on() #turn on robots light
-        
+         while self.light_is_on(): #Loops until light is off
+             
+             while self.can_move_right(): #In my approach we will sort them one by one starting from right to left
+                 if self.compare_item() == None #at the end of the list
+                 break #breaks loop
+                 
+
         pass
 
 
