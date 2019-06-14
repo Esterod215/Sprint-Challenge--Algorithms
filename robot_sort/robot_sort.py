@@ -108,6 +108,7 @@ class SortingRobot:
            
             if self.compare_item() == None: 
                 self.swap_item()
+                self.set_light_off()
                 break #breaks loop
                  
             else:
@@ -119,7 +120,7 @@ class SortingRobot:
                         break
 
 
-        pass
+        
 
 
 if __name__ == "__main__":
