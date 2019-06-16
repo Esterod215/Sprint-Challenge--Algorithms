@@ -97,7 +97,30 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        self.set_light_on() #turn on robots light
+        self.swap_item() #added this because robot needs initial item
+        
+        while self.light_is_on(): #Loops until light is off
+             
+            while self.move_right(): #In my approach we will sort them one by one starting from right to left
+                if self.compare_item() == 1: #if next item is greater swap items
+                    self.swap_item()
+           
+            if self.compare_item() == None: 
+                self.swap_item()
+                self.set_light_off() # added this to brealk infinite loop
+                break #breaks loop
+                 
+            else:
+                 while self.move_left(): #checks that the left items arent greater
+                    if self.compare_item() == None:
+                        self.swap_item()
+                        self.move_right()
+                        self.swap_item()
+                        break
+
+
+        
 
 
 if __name__ == "__main__":
